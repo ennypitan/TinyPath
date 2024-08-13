@@ -44,7 +44,9 @@ const LinkCard = ({ url, fetchUrls }) => {
         <Button
           variant="ghost"
           onClick={() =>
-            navigator.clipboard.writeText(`https://tinyp/${url?.short_url}`)
+            navigator.clipboard.writeText(
+              `https://tiyp.netlify.app/${url?.short_url}`
+            )
           }
         >
           <Copy />
