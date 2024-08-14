@@ -62,3 +62,16 @@ export async function createUrl(
 
   return data;
 }
+
+export async function getLongUrl(id) {
+  const { data, error } = await supabase
+    .from("urls")
+    .select("id, original_url");
+
+  if (error) {
+    console.error(error.message);
+    throw new Error("Unable to load URLs");
+  }
+
+  return data;
+}
