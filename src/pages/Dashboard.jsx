@@ -10,6 +10,7 @@ import { UrlState } from "@/context";
 import { getClicksForUrls } from "@/db/apiClicks";
 import { getUrls } from "@/db/apiUrls";
 import LinkCard from "@/components/LinkCard";
+import { CreateLink } from "@/components/CreateLink";
 
 const Dashboard = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -68,7 +69,9 @@ const Dashboard = () => {
       </div>
       <div className=" flex justify-between">
         <h1 className="text-4xl font-extrabold">My Links</h1>
-        <Button>Create Links</Button>
+        <Button>
+          <CreateLink />
+        </Button>
       </div>
       <div className="relative">
         <Input
