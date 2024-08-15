@@ -64,21 +64,44 @@ export async function createUrl(
 }
 
 export async function getLongUrl(id) {
+  // Fetch the original URL using either the short URL or the custom URL
   const { data, error } = await supabase
     .from("urls")
     .select("id, original_url")
     .or(`short_url.eq.${id},custom_url.eq.${id}`)
     .single();
 
-  if (error) {
-    console.error(error.message);
-    throw new Error("Error fetching short link");
+  // If there's an error or no data is found, throw an error
+  if (error || !data) {
+    console.error(
+      "Error fetching short link:",
+      error ? error.message : "No data found"
+    );
+    throw new Error("Short URL not found or does not exist.");
   }
 
+  // Return the fetched data
   return data;
 }
 
+// export async function getUrl({ id, user_id }) {
+//   const { data, error } = await supabase
+//     .from("urls")
+//     .select("*")
+//     .eq("id", id)
+//     .eq("user_id", user_id)
+//     .single();
+
+//   if (error) {
+//     console.error(error.message);
+//     throw new Error("Short Url not found");
+//   }
+
+//   return data;
+// }
+
 export async function getUrl({ id, user_id }) {
+  // Fetch the URL record from the database where the id and user_id match
   const { data, error } = await supabase
     .from("urls")
     .select("*")
@@ -86,10 +109,17 @@ export async function getUrl({ id, user_id }) {
     .eq("user_id", user_id)
     .single();
 
-  if (error) {
-    console.error(error.message);
-    throw new Error("Short Url not found");
+  // If there's an error or no data is found, throw an error
+  if (error || !data) {
+    console.error(
+      "Error fetching URL:",
+      error ? error.message : "No data found"
+    );
+    throw new Error(
+      "Short URL not found or you do not have permission to access it."
+    );
   }
 
+  // Return the fetched data
   return data;
 }

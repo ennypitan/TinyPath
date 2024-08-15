@@ -8,12 +8,9 @@ import { useNavigate, useParams } from "react-router-dom";
 import { BarLoader, BeatLoader } from "react-spinners";
 import { Copy, Download, Trash } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Link = () => {
-  const { id } = useParams();
-  const { user } = UrlState();
-  const navigate = useNavigate();
-
   const downloadImage = () => {
     const imageUrl = url?.qr;
     const fileName = url?.title;
@@ -28,6 +25,9 @@ const Link = () => {
 
     document.body.removeChild(anchor);
   };
+  const { id } = useParams();
+  const { user } = UrlState();
+  const navigate = useNavigate();
 
   const {
     loading,
@@ -111,7 +111,32 @@ const Link = () => {
             alt="qr code"
           />
         </div>
-        <div className="sm:w-3/5"></div>
+
+        <Card className="sm:w-3/5">
+          <CardHeader>
+            <CardTitle className="text-4xl font-extrabold">Stats</CardTitle>
+          </CardHeader>
+
+          {stats && stats.length > 0 ? (
+            <CardContent className="flex flex-col gap-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Total Clicks</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p>{stats.length}</p>
+                </CardContent>
+              </Card>
+              <CardTitle>Location Data</CardTitle>
+
+              <CardTitle>Device Info</CardTitle>
+            </CardContent>
+          ) : (
+            <CardContent>
+              <p>{loadingStats ? "Loading Statistics" : "No Statistics yet"}</p>
+            </CardContent>
+          )}
+        </Card>
       </div>
     </>
   );
