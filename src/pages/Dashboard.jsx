@@ -27,18 +27,17 @@ const Dashboard = () => {
     loading: loadingClicks,
     data: clicks,
     fn: fnClicks,
-  } = useFetch(
-    getClicksForUrls,
-    urls?.map((url) => url.id)
-  );
+  } = useFetch(getClicksForUrls, urls ? urls.map((url) => url.id) : []);
 
   useEffect(() => {
-    fnUrls();
+    fnUrls(); // Fetch URLs on mount
   }, []);
 
   useEffect(() => {
-    if (urls?.length) fnClicks();
-  }, [urls?.length]);
+    if (urls && urls.length > 0) {
+      fnClicks(); // Fetch clicks only if URLs are available
+    }
+  }, [urls]);
 
   const filteredUrls = urls?.filter((url) =>
     url.title.toLowerCase().includes(searchQuery.toLowerCase())
@@ -86,7 +85,7 @@ const Dashboard = () => {
       </div>
       {error && <Error message={error?.message} />}
       {(filteredUrls || []).map((url, i) => {
-        return <LinkCard key={i} url={url} fetchUrls={fnUrls} />;
+        return <LinkCard key={url.id} url={url} fetchUrls={fnUrls} />;
       })}
     </div>
   );

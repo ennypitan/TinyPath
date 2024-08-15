@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
-import { Copy, DeleteIcon, Download, Trash } from "lucide-react";
+import { Copy, Download, Trash } from "lucide-react";
 import useFetch from "@/hooks/use-fetch";
 import { deleteUrl } from "@/db/apiUrls";
 import { BeatLoader } from "react-spinners";
