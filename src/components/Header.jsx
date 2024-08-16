@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Navigate, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { Button } from "./ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
@@ -10,17 +10,12 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import {
-  ArrowBigDown,
-  ArrowDown,
-  LinkIcon,
-  LogOut,
-  MenuIcon,
-} from "lucide-react";
+import { LinkIcon, LogOut, MenuIcon } from "lucide-react";
 import { UrlState } from "@/context";
 import useFetch from "@/hooks/use-fetch";
 import { logout } from "@/db/apiAuth";
 import { BarLoader } from "react-spinners";
+import logo from "../assets/logo.png";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -29,9 +24,11 @@ const Header = () => {
 
   return (
     <>
-      <nav className="py-4 flex justify-between items-center  border-red-700">
+      <nav className=" w-full py-4 flex justify-between items-center border-[2px] border-[solid] border-[#3e3e3e]">
         <Link to="/">
-          <div className="h-16">Logo</div>
+          <div>
+            <img src={logo} alt="logo" className="w-40" />
+          </div>
         </Link>
         <div>
           {!user ? (

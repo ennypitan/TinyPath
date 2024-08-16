@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import React, { useState } from "react";
-import banner from "../assets/banner.jpg";
 import {
   Accordion,
   AccordionContent,
@@ -41,11 +40,11 @@ const Landing = () => {
           Shorten!
         </Button>
       </form>
-      <img
+      {/* <img
         src={banner}
         alt="banner"
         className="max-w-screen-2xl mt-[-300px] md:px-11 z-[-1]"
-      />
+      /> */}
 
       <Accordion type="multiple" collapsible className="w-1/2 md:px-11">
         <AccordionItem value="item-1">
