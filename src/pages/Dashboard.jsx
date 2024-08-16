@@ -49,7 +49,7 @@ const Dashboard = () => {
         <BarLoader width={"100%"} color="#36d7b7" />
       )}
       <div className="grid grid-cols-2 gap-4">
-        <Card>
+        <Card className="drop-shadow-md">
           <CardHeader>
             <CardTitle>Links Created</CardTitle>
           </CardHeader>
@@ -57,7 +57,7 @@ const Dashboard = () => {
             <p>{urls?.length}</p>
           </CardContent>
         </Card>
-        <Card>
+        <Card className="drop-shadow-md">
           <CardHeader>
             <CardTitle>Total Clicks</CardTitle>
           </CardHeader>
@@ -72,7 +72,7 @@ const Dashboard = () => {
           <CreateLink />
         </Button>
       </div>
-      <div className="relative">
+      <div className="relative drop-shadow-md">
         <Input
           type="text"
           placeholder="Filter Links"

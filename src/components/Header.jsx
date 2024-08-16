@@ -10,7 +10,13 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { LinkIcon, LogOut } from "lucide-react";
+import {
+  ArrowBigDown,
+  ArrowDown,
+  LinkIcon,
+  LogOut,
+  MenuIcon,
+} from "lucide-react";
 import { UrlState } from "@/context";
 import useFetch from "@/hooks/use-fetch";
 import { logout } from "@/db/apiAuth";
@@ -23,7 +29,7 @@ const Header = () => {
 
   return (
     <>
-      <nav className="py-4 flex justify-between items-center">
+      <nav className="py-4 flex justify-between items-center  border-red-700">
         <Link to="/">
           <div className="h-16">Logo</div>
         </Link>
@@ -32,7 +38,7 @@ const Header = () => {
             <Button onClick={() => navigate("/auth")}> Login</Button>
           ) : (
             <DropdownMenu>
-              <DropdownMenuTrigger className="w-10 rounded-full overflow-hidden">
+              <DropdownMenuTrigger className="flex flex-row items-center w-30">
                 <Avatar>
                   <AvatarImage
                     src={user?.user_metadata?.profile_pic}
@@ -40,6 +46,7 @@ const Header = () => {
                   />
                   <AvatarFallback>EA</AvatarFallback>
                 </Avatar>
+                <MenuIcon />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuLabel>

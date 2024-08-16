@@ -73,7 +73,7 @@ const Login = () => {
   };
 
   return (
-    <Card>
+    <Card className="drop-shadow-2xl">
       <CardHeader>
         <CardTitle>Login</CardTitle>
         <CardDescription>Login into your account</CardDescription>

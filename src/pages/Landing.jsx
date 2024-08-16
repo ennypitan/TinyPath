@@ -22,7 +22,7 @@ const Landing = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <h2 className="my-10 sm:my-16 text-3xl sm:text-6xl lg:text7xl text-white text-center font-extrabold">
+      <h2 className="my-5 sm:my-16 text-3xl sm:text-6xl lg:text7xl text-blue-500 text-center font-extrabold">
         Simplify Your Links, <br />
         Amplify Your Impact.
       </h2>
@@ -41,7 +41,11 @@ const Landing = () => {
           Shorten!
         </Button>
       </form>
-      <img src={banner} alt="banner" className="w-full my-11 md:px-11" />
+      <img
+        src={banner}
+        alt="banner"
+        className="max-w-screen-2xl mt-[-300px] md:px-11 z-[-1]"
+      />
 
       <Accordion type="multiple" collapsible className="w-1/2 md:px-11">
         <AccordionItem value="item-1">

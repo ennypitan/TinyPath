@@ -77,7 +77,7 @@ const Signup = () => {
   };
 
   return (
-    <Card>
+    <Card className="drop-shadow-2xl">
       <CardHeader>
         <CardTitle>Signup</CardTitle>
         <CardDescription>
