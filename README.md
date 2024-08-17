@@ -16,6 +16,28 @@
 4. **Analytics**
    Track the performance of your shortened URLs with Tinypath’s built-in analytics. Users can monitor how many clicks their links receive, as well as the geographic location and devices of their audience. This data is invaluable for understanding your audience and optimizing your link-sharing strategy.
 
+#### Technologies Used
+
+**React:** A JavaScript library developed by Facebook for building user interfaces. React enables the creation of reusable UI components, making it easier to manage the state and structure of complex web applications.
+
+**Shadcn UI:** A collection of modern, accessible UI components for React. It provides a set of pre-styled components that can be customized and used to build aesthetically pleasing and user-friendly interfaces.
+
+**Supabase:** An open-source backend-as-a-service platform that provides a real-time database, authentication, and storage. Supabase aims to simplify backend development by offering easy integration with PostgreSQL databases.
+
+**React Router DOM:** A library for routing in React applications. It enables navigation between different components or pages in a single-page application (SPA) without refreshing the page, providing a seamless user experience.
+
+**Lucide React:** A collection of open-source icons for React. Lucide React provides a set of customizable, high-quality icons that can be easily integrated into React applications for improved visual appeal and functionality.
+
+**React Spinner:** A library for adding loading spinners to React applications. React Spinner provides various spinner components to indicate ongoing background processes or data loading, enhancing the user experience during delays.
+
+**Yup:** A JavaScript schema builder for value parsing and validation. Yup is commonly used with form libraries to validate user inputs based on defined schemas, ensuring data integrity and correctness.
+
+**React QRCode Logo:** A React component for generating QR codes. It provides an easy way to create and display QR codes, which can be useful for linking to URLs or sharing information in a scannable format.
+
+**UA Parser:** A JavaScript library for parsing user agent strings. UA Parser helps in identifying browser, operating system, and device information from the user agent, which can be used for analytics or adaptive user experiences.
+
+**Recharts:** A composable charting library built on React components. Recharts provides a set of declarative chart components that are highly customizable, making it easy to create interactive and responsive data visualizations.
+
 ##### Installation
 
 To get started with Tinypath, follow these steps:
@@ -40,3 +62,13 @@ npm start
 - **Generate a QR Code:** The application automatically generates a QR Code for the shorten link
 
 * **View Analytics:** Navigate to the "Analytics" tab to view detailed statistics for your links.
+
+#### Contributing
+
+Contributions are welcome! If you have ideas to improve Tinypath or find any issues, feel free to fork the repository and submit a pull request.
+
+##### License
+
+This project is licensed under the MIT License - see the LICENSE file for details
+
+This project was developed by **Ennypitan Adekoya** as part of the Capstone Project at **AltSchool Africa School of Engineering**.
