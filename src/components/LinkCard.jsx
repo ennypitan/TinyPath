@@ -23,7 +23,7 @@ const LinkCard = ({ url, fetchUrls }) => {
   const { loading: loadingDelete, fn: fnDelete } = useFetch(deleteUrl, url?.id);
 
   return (
-    <div className="flex flex-col md:flex-row gap-5 border bg-gray-900 rounded-lg">
+    <div className="flex flex-col md:flex-row gap-5 drop-shadow-md border-black">
       <img
         src={url?.qr}
         alt="qr code"
@@ -46,7 +46,6 @@ const LinkCard = ({ url, fetchUrls }) => {
       </Link>
       <div className="flex gap-2">
         <Button
-          variant="ghost"
           onClick={() =>
             navigator.clipboard.writeText(
               `https://tiyp.netlify.app/${
@@ -57,13 +56,10 @@ const LinkCard = ({ url, fetchUrls }) => {
         >
           <Copy />
         </Button>
-        <Button variant="ghost" onClick={downloadImage}>
+        <Button onClick={downloadImage}>
           <Download />
         </Button>
-        <Button
-          variant="ghost"
-          onClick={() => fnDelete().then(() => fetchUrls())}
-        >
+        <Button onClick={() => fnDelete().then(() => fetchUrls())}>
           {loadingDelete ? <BeatLoader size={5} color="red" /> : <Trash />}
         </Button>
       </div>

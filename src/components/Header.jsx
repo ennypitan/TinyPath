@@ -24,7 +24,7 @@ const Header = () => {
 
   return (
     <>
-      <nav className=" w-full py-4 flex justify-between items-center border-[2px] border-[solid] border-[#3e3e3e]">
+      <nav className="py-4 px-20 bg-white mb-6 flex justify-between items-center drop-shadow-md">
         <Link to="/">
           <div>
             <img src={logo} alt="logo" className="w-40" />
