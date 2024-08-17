@@ -67,66 +67,79 @@ const Link = () => {
       )}
 
       <div className="flex flex-col gap-8 sm:flex-row justify-between">
-        <div className="flex flex-col items-start gap-8 rounded-lg sm:w-2/5">
-          <span className="text-6xl font-extrabold hover:underline cursor-pointer">
-            {url?.title}
-          </span>
-          <a
-            href={`https://tiyp.netlify.app/${link}`}
-            target="_blank"
-            className="text-3xl sm:text-4xl text-blue-400 font-bold hover:underline cursor-pointer"
-          >
-            https://tiyp.netlify.app/${link}
-          </a>
-          <a
-            href={url?.original_url}
-            target="_blank"
-            className="flex items-center gap-1 hover:underline cursor-pointer"
-          >
-            <LinkIcon className="p-1" /> {url?.original_url}
-          </a>
-          <span className="flex items-end font-extralight text-sm">
-            {new Date(url?.created_at).toLocaleString()}
-          </span>
+        <Card className="drop-shadow-md border-2">
+          <CardContent className="p-4">
+            <div className="flex flex-col items-start gap-8 rounded-lg sm:w-2/5">
+              <span className="text-6xl font-extrabold hover:underline cursor-pointer">
+                <Card className=" border-emerald-500 border-2">
+                  <CardContent>{url?.title}</CardContent>
+                </Card>
+              </span>
+              <a
+                href={`https://tiyp.netlify.app/${link}`}
+                target="_blank"
+                className="text-3xl sm:text-4xl text-blue-400 font-bold hover:underline cursor-pointer"
+              >
+                https://tiyp.netlify.app/${link}
+              </a>
+              <a
+                href={url?.original_url}
+                target="_blank"
+                className="flex items-center gap-1 hover:underline cursor-pointer"
+              >
+                <LinkIcon className="p-1" /> {url?.original_url}
+              </a>
+              <span className="flex items-end font-extralight text-sm">
+                {new Date(url?.created_at).toLocaleString()}
+              </span>
 
-          <div className="flex gap-2">
-            <Button
-              variant="ghost"
-              onClick={() =>
-                navigator.clipboard.writeText(
-                  `https://tiyp.netlify.app/${url?.short_url}`
-                )
-              }
-            >
-              <Copy />
-            </Button>
-            <Button variant="ghost" onClick={downloadImage}>
-              <Download />
-            </Button>
-            <Button variant="ghost" onClick={() => fnDelete()}>
-              {loadingDelete ? <BeatLoader size={5} color="red" /> : <Trash />}
-            </Button>
-          </div>
-          <img
-            src={url?.qr}
-            className="w-full self-center sm:self-start ring ring-blue-500 p-1 object-contain"
-            alt="qr code"
-          />
-        </div>
-
+              <div className="flex gap-2">
+                <Button
+                  variant="ghost"
+                  onClick={() =>
+                    navigator.clipboard.writeText(
+                      `https://tiyp.netlify.app/${url?.short_url}`
+                    )
+                  }
+                >
+                  <Copy />
+                </Button>
+                <Button variant="ghost" onClick={downloadImage}>
+                  <Download />
+                </Button>
+                <Button variant="ghost" onClick={() => fnDelete()}>
+                  {loadingDelete ? (
+                    <BeatLoader size={5} color="red" />
+                  ) : (
+                    <Trash />
+                  )}
+                </Button>
+              </div>
+              <img
+                src={url?.qr}
+                className="w-full self-center sm:self-start ring ring-blue-500 p-1 object-contain"
+                alt="qr code"
+              />
+            </div>
+          </CardContent>
+        </Card>
         <Card className="sm:w-3/5">
           <CardHeader>
-            <CardTitle className="text-4xl font-extrabold">Stats</CardTitle>
+            <CardTitle className="text-4xl font-extrabold">Analytics</CardTitle>
           </CardHeader>
 
           {stats && stats.length > 0 ? (
             <CardContent className="flex flex-col gap-6">
               <Card>
                 <CardHeader>
-                  <CardTitle>Total Clicks</CardTitle>
+                  <CardTitle>Total Clicks:</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p>{stats.length}</p>
+                  <Button className="cursor-none bg-emerald-500">
+                    <p className="font-extrabold  inline  text-4xl text-white">
+                      {stats?.length}
+                    </p>
+                  </Button>
                 </CardContent>
               </Card>
               <CardTitle>Location Data</CardTitle>

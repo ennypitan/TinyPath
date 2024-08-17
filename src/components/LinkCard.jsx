@@ -23,7 +23,7 @@ const LinkCard = ({ url, fetchUrls }) => {
   const { loading: loadingDelete, fn: fnDelete } = useFetch(deleteUrl, url?.id);
 
   return (
-    <div className="flex flex-col md:flex-row gap-5 drop-shadow-md border-black">
+    <div className="flex flex-col md:flex-row gap-5 drop-shadow-md bg-white p-4">
       <img
         src={url?.qr}
         alt="qr code"

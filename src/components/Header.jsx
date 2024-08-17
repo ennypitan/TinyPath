@@ -24,7 +24,7 @@ const Header = () => {
 
   return (
     <>
-      <nav className="py-4 px-20 bg-white mb-6 flex justify-between items-center drop-shadow-md">
+      <nav className="py-4 px-20 bg-white mb-6 flex justify-between items-center rounded-full border-2 border-emerald-500">
         <Link to="/">
           <div>
             <img src={logo} alt="logo" className="w-40" />
@@ -35,15 +35,17 @@ const Header = () => {
             <Button onClick={() => navigate("/auth")}> Login</Button>
           ) : (
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex flex-row items-center w-30">
-                <Avatar>
-                  <AvatarImage
-                    src={user?.user_metadata?.profile_pic}
-                    className="object-cover"
-                  />
-                  <AvatarFallback>EA</AvatarFallback>
-                </Avatar>
-                <MenuIcon />
+              <DropdownMenuTrigger className="flex  w-30">
+                <div className="flex pr-3 rounded-full flex-row items-center bg-emerald-500">
+                  <Avatar>
+                    <AvatarImage
+                      src={user?.user_metadata?.profile_pic}
+                      className="object-cover"
+                    />
+                    <AvatarFallback>EA</AvatarFallback>
+                  </Avatar>
+                  <MenuIcon />
+                </div>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuLabel>

@@ -49,20 +49,28 @@ const Dashboard = () => {
         <BarLoader width={"100%"} color="#36d7b7" />
       )}
       <div className="grid grid-cols-2 gap-4">
-        <Card className="drop-shadow-md">
+        <Card className="drop-shadow-md border-2 border-emerald-500">
           <CardHeader>
-            <CardTitle>Links Created</CardTitle>
+            <CardTitle>Links Created:</CardTitle>
           </CardHeader>
           <CardContent>
-            <p>{urls?.length}</p>
+            <Button className="cursor-none bg-emerald-500">
+              <p className="font-extrabold  inline  text-4xl text-white">
+                {urls?.length}
+              </p>
+            </Button>
           </CardContent>
         </Card>
-        <Card className="drop-shadow-md">
+        <Card className="drop-shadow-md border-2 border-emerald-500">
           <CardHeader>
-            <CardTitle>Total Clicks</CardTitle>
+            <CardTitle>Total Clicks:</CardTitle>
           </CardHeader>
           <CardContent>
-            <p>{clicks?.length}</p>
+            <Button className="cursor-none bg-emerald-500">
+              <p className="font-extrabold  inline  text-4xl text-white">
+                {clicks?.length}
+              </p>
+            </Button>
           </CardContent>
         </Card>
       </div>
@@ -74,6 +82,7 @@ const Dashboard = () => {
       </div>
       <div className="relative drop-shadow-md">
         <Input
+          className="border-2 border-emerald-500"
           type="text"
           placeholder="Filter Links"
           value={searchQuery}
@@ -81,7 +90,7 @@ const Dashboard = () => {
             setSearchQuery(e.target.value);
           }}
         />
-        <Filter className="absolute top-2 right-2 p-1" />
+        <Filter className="absolute top-2 right-2 p-1 " />
       </div>
       {error && <Error message={error?.message} />}
       {(filteredUrls || []).map((url, i) => {
