@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { useNavigate } from "react-router-dom";
+import banner from "../assets/banner.png";
 
 const Landing = () => {
   const [longURL, setLongURL] = useState();
@@ -20,7 +21,7 @@ const Landing = () => {
   };
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center mt-16">
       <h2 className="my-5 sm:my-16 text-3xl sm:text-6xl lg:text7xl text-blue-500 text-center font-extrabold">
         Simplify Your Links, <br />
         Amplify Your Impact.
@@ -40,11 +41,11 @@ const Landing = () => {
           Shorten!
         </Button>
       </form>
-      {/* <img
+      <img
         src={banner}
         alt="banner"
-        className="max-w-screen-2xl mt-[-300px] md:px-11 z-[-1]"
-      /> */}
+        className="w-full h-5/6 mt-[-700px]  md:px-11 z-[-1]"
+      />
 
       <Accordion type="multiple" collapsible className="w-1/2 md:px-11">
         <AccordionItem value="item-1">
