@@ -76,3 +76,10 @@ Contributions are welcome! If you have ideas to improve Tinypath or find any iss
 This project is licensed under the MIT License - see the LICENSE file for details
 
 This project was developed by **Ennypitan Adekoya** as part of the Capstone Project at **AltSchool Africa School of Engineering**.
+
+##### Screenshots
+
+<img src="./src/assets/asset2.jpg" alt="" style="width: 100%" />
+<img src="./src/assets/asset3.jpg" alt="" style="width: 100%" />
+<img src="./src/assets/asset4.jpg" alt="" style="width: 100%" />
+<img src="./src/assets/asset5.jpg" alt="" style="width: 100%" />
