@@ -1,5 +1,9 @@
 # Tinypath
 
+<img src="./src/assets/asset1.jpg" alt="" style="width: 100%" />
+
+[Live Project Link](https://tiyp.netlify.app//)
+
 **Tinypath** is a powerful and user-friendly URL shortener platform designed to make sharing links easier and more efficient. Whether you need to shorten long URLs, create custom branded links, generate QR codes, or track the performance of your URLs, Tinypath has got you covered.
 
 ##### Features
